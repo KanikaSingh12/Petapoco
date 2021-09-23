@@ -18,16 +18,16 @@ namespace Petapoco_demoProject.Controllers
     public class UserController : ControllerBase
     {
         
-        private readonly Iuser_detail payoutService;
+        private readonly Iuser_detail userService;
 
-        public UserController(Iuser_detail payoutService)
+        public UserController(Iuser_detail userService)
         {
-            this.payoutService = payoutService;
+            this.userService = userService;
         }
-        [HttpGet("overview")]
-        public Task<user_detail_view> GetPayoutsOverview()
+        [HttpGet("getUserView")]
+        public Task<user_detail_view> getUserView()
         {
-            return this.payoutService.getUser();
+            return this.userService.getUser();
         }
     }
 }
