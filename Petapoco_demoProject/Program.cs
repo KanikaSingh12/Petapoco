@@ -46,6 +46,7 @@ var db = DatabaseConfiguration.Build()
          .Create();
 
 builder.Services.AddTransient<IDatabase>(s => db);
+
 builder.Services.AddTransient<Iuser_detail, user_service>();
 
 

@@ -10,7 +10,10 @@ namespace Petapoco_demoProject.Models
 {
     public class user_detail_view
     {
-       
+        public user_detail_view()
+        { 
+        }
+        
         public int user_id { get; set; }
 
        
