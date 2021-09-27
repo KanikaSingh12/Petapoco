@@ -18,39 +18,36 @@ namespace Petapoco_demoProject.Controllers
     public class UserController : ControllerBase
     {
         
-        private readonly Iuser_detail payoutService;
+        private readonly Iuser_detail userService;
 
-        public UserController(Iuser_detail payoutService)
+        public UserController(Iuser_detail userService)
         {
-            this.payoutService = payoutService;
+            this.userService = userService;
         }
-        
-        [HttpGet("GetUser")]
-        public Task<user_detail_view> getUser(int id)
+        [HttpGet("getAUser")]
+        public Task<user_detail_view> GetAUser(int id)
         {
-
-            return this.payoutService.getAUser(id);
+            return this.userService.getAUser(id);
         }
-        [HttpGet("GetAllUser")]
-        public Task <List<user_detail_view>> GetPayoutsOverview()
+        [HttpGet("GetALLUser")]
+        public Task<List<user_detail_view>> GetALLUser()
         {
-
-            return this.payoutService.getUser();
+            return this.userService.getUser();
         }
         [HttpPost("Insertuser")]
         public Task<string> Insertusers(user_detail_view users)
         {
-            return this.payoutService.Insertuser(users);
+            return this.userService.Insertuser(users);
         }
         [HttpDelete("Deleteuser")]
         public Task<string> Deleteusers(int id)
         {
-            return this.payoutService.Deleteuser(id);
+            return this.userService.Deleteuser(id);
         }
         [HttpPut("UpdateUser")]
         public Task<string> Updateusers(int id,String username,string password)
         {
-            return this.payoutService.Updateuser(id,username,password);
+            return this.userService.Updateuser(id,username,password);
         }
     }
 }
